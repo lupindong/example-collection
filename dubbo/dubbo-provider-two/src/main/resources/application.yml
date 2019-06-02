@@ -32,7 +32,7 @@ dubbo:
     version: 1.0.0
     timeout: 300000
     retries: 0
-    delay: -1
+    delay: 100
     filter:
 
 logging:
