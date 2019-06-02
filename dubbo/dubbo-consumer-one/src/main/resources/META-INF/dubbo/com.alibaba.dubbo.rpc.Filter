@@ -1,0 +1,2 @@
+rpcLogFilter1=net.lovexq.example.dubbo.one.filter.RpcLogFilter1
+rpcLogFilter2=net.lovexq.example.dubbo.one.filter.RpcLogFilter2

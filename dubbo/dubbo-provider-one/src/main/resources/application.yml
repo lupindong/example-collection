@@ -26,6 +26,8 @@ dubbo:
   registry:
     id: dubbo-provider-one-registry
     address: zookeeper://127.0.0.1:2181
+  consumer:
+    check: false
   # Base packages to scan Dubbo Components (e.g @Service , @Reference)
   scan:
     basePackages: net.lovexq.example.dubbo.one.facade.impl

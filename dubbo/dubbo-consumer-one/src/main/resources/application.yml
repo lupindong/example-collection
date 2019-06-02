@@ -20,8 +20,9 @@ dubbo:
   registry:
     id: dubbo-consumer-one-registry
     address: zookeeper://127.0.0.1:2181
-    consumer:
+  consumer:
       check: false
+      filter: rpcLogFilter2
   service:
     provider-one:
       group: dev
