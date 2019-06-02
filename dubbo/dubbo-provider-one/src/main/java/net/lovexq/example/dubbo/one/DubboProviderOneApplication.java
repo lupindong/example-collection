@@ -1,4 +1,4 @@
-package net.lovexq.example.dubbo;
+package net.lovexq.example.dubbo.one;
 
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,7 +13,6 @@ public class DubboProviderOneApplication {
 
     public static void main(String[] args) {
         new SpringApplicationBuilder(DubboProviderOneApplication.class)
-                // 非 Web 应用
                 .web(WebApplicationType.NONE)
                 .run(args);
     }

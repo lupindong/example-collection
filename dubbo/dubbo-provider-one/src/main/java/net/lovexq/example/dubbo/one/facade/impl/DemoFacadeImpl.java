@@ -1,10 +1,10 @@
-package net.lovexq.example.dubbo.facade.impl;
+package net.lovexq.example.dubbo.one.facade.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import net.lovexq.example.dubbo.facade.DemoFacade;
+import net.lovexq.example.dubbo.one.facade.DemoFacade;
 
 /**
- * 演示Facade 实现类
+ * 演示 Facade实现类
  *
  * @author LuPindong
  * @time 2019-06-02 10:20
@@ -21,7 +21,7 @@ public class DemoFacadeImpl implements DemoFacade {
 
     @Override
     public String sayHello(String name) {
-        return "sayHello >>> " + count;
+        return String.format("sayHello %s >>> %d", name, count++);
     }
 
 }

@@ -28,6 +28,7 @@
     <modules>
         <module>dubbo-provider-one-api</module>
         <module>dubbo-provider-one</module>
+        <module>dubbo-consumer-one</module>
     </modules>
 
     <dependencyManagement>
