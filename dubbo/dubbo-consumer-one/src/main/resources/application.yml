@@ -24,7 +24,11 @@ dubbo:
   protocol:
     id: dubbo
     name: dubbo
-    port: 12345
+    port: 21000
+  ## RegistryConfig Bean
+  registry:
+    address: zookeeper://127.0.0.1:2181
+    id: dubbo-consumer-one-registry
 
 logging:
   path: /home/net/lovexq/dubbo-provider-two/log/${spring.application.name}-${server.port}

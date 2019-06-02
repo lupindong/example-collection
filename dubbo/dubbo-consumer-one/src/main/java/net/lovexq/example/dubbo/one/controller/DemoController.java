@@ -16,9 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
 
     @Reference(version = "${demo.service.version}",
-            application = "${dubbo.application.id}",
-            url = "dubbo://localhost:12345")
-    private DemoFacade demoFacade;
+            application = "${dubbo.application.id}")
+    DemoFacade demoFacade;
 
     @RequestMapping("/sayHello/{name}")
     public String sayHello(@PathVariable("name") String name) {

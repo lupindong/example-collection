@@ -26,6 +26,8 @@
     </properties>
 
     <modules>
+        <module>dubbo-provider-two-api</module>
+        <module>dubbo-provider-two</module>
         <module>dubbo-provider-one-api</module>
         <module>dubbo-provider-one</module>
         <module>dubbo-consumer-one</module>
