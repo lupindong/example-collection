@@ -2,6 +2,7 @@ package net.lovexq.example.dubbo.one.facade.impl;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.dubbo.config.annotation.Service;
+import lombok.extern.slf4j.Slf4j;
 import net.lovexq.example.dubbo.one.facade.DemoFacade;
 import net.lovexq.example.dubbo.two.facade.ShopFacade;
 
@@ -12,17 +13,18 @@ import net.lovexq.example.dubbo.two.facade.ShopFacade;
  * @time 2019-06-02 10:20
  */
 @Service(
-        version = "${demo.service.version}",
-        application = "${dubbo.application.id}",
-        protocol = "${dubbo.protocol.id}",
-        registry = "${dubbo.registry.id}"
+        group = "${dubbo.provider.group}",
+        version = "${dubbo.provider.version}"
 )
+@Slf4j
 public class DemoFacadeImpl implements DemoFacade {
 
     private static int count = 0;
 
-    @Reference(version = "${demo.service.version}",
-            application = "${dubbo.application.id}")
+    @Reference(
+            group = "${dubbo.service.provider-two.group}",
+            version = "${dubbo.service.provider-two.version}"
+    )
     ShopFacade shopFacade;
 
     @Override

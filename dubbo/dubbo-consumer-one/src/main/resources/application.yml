@@ -9,17 +9,8 @@ server:
 management:
   port: 8081
 
-# Service version
-demo:
-  service:
-    version: 1.0.0
-
 # Dubbo Config properties
 dubbo:
-  ## ApplicationConfig Bean
-  application:
-    id: dubbo-consumer-one-id
-    name: dubbo-consumer-one-name
   ## ProtocolConfig Bean
   protocol:
     id: dubbo
@@ -27,8 +18,19 @@ dubbo:
     port: 21000
   ## RegistryConfig Bean
   registry:
-    address: zookeeper://127.0.0.1:2181
     id: dubbo-consumer-one-registry
+    address: zookeeper://127.0.0.1:2181
+    consumer:
+      check: false
+  service:
+    provider-one:
+      group: dev
+      version: 1.0.0
+      #url: dubbo://127.0.0.1:21000
+    provider-two:
+      group: dev
+      version: 1.0.0
+      #url: dubbo://127.0.0.1:21001
 
 logging:
   path: /home/net/lovexq/dubbo-provider-two/log/${spring.application.name}-${server.port}

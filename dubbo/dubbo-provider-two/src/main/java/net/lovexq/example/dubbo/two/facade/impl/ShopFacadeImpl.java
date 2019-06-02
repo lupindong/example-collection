@@ -16,10 +16,8 @@ import java.util.Random;
  * @time 2019-06-02 10:20
  */
 @Service(
-        version = "${demo.service.version}",
-        application = "${dubbo.application.id}",
-        protocol = "${dubbo.protocol.id}",
-        registry = "${dubbo.registry.id}"
+        group = "${dubbo.provider.group}",
+        version = "${dubbo.provider.version}"
 )
 @Slf4j
 public class ShopFacadeImpl implements ShopFacade {

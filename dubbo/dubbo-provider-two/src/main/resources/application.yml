@@ -9,30 +9,29 @@ server:
 management:
   port: 9091
 
-# Service version
-demo:
-  service:
-    version: 1.0.0
-
 # Dubbo Config properties
 dubbo:
-  ## ApplicationConfig Bean
-  application:
-    id: dubbo-provider-two-id
-    name: dubbo-provider-two-name
   ## ProtocolConfig Bean
   protocol:
     id: dubbo
     name: dubbo
-    port: 21000
+    port: 21001
     status: server
   ## RegistryConfig Bean
   registry:
-    address: zookeeper://127.0.0.1:2181
     id: dubbo-provider-two-registry
+    address: zookeeper://127.0.0.1:2181
   # Base packages to scan Dubbo Comptwonts (e.g @Service , @Reference)
   scan:
     basePackages: net.lovexq.example.dubbo.two.facade.impl
+  # ProviderConfig Bean
+  provider:
+    group: dev
+    version: 1.0.0
+    timeout: 300000
+    retries: 0
+    delay: -1
+    filter:
 
 logging:
   path: /home/net/lovexq/dubbo-provider-two/log/${spring.application.name}-${server.port}
