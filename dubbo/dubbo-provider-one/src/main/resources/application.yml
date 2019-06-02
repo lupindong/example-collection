@@ -27,8 +27,20 @@ dubbo:
     port: 12345
   ## RegistryConfig Bean
   registry:
-    address: N/A
-    id: my-registry
+    address: zookeeper://127.0.0.1:2181
+    id: dubbo-provider-one-registry
   # Base packages to scan Dubbo Components (e.g @Service , @Reference)
   scan:
     basePackages: net.lovexq.example.dubbo.one.facade.impl
+
+logging:
+  path: /home/net/lovexq/dubbo-provider-one/log/${spring.application.name}-${server.port}
+  file: ${logging.path}/application.log
+  #level: OFF、FATAL、ERROR、WARN、INFO、DEBUG、ALL
+  level:
+    root: INFO
+    com.alibaba.dubbo: INFO
+    net.lovexq.example: INFO
+    org.apache.zookeeper: WARN
+    org.springframework: WARN
+    org.springframework.boot: INFO

@@ -25,3 +25,15 @@ dubbo:
     id: dubbo
     name: dubbo
     port: 12345
+
+logging:
+  path: /home/net/lovexq/dubbo-provider-two/log/${spring.application.name}-${server.port}
+  file: ${logging.path}/application.log
+  #level: OFF、FATAL、ERROR、WARN、INFO、DEBUG、ALL
+  level:
+    root: INFO
+    com.alibaba.dubbo: INFO
+    net.lovexq.example: INFO
+    org.apache.zookeeper: WARN
+    org.springframework: WARN
+    org.springframework.boot: INFO

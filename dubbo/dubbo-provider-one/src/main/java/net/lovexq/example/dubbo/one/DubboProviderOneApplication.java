@@ -12,6 +12,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 public class DubboProviderOneApplication {
 
     public static void main(String[] args) {
+        System.setProperty("dubbo.application.logger", "slf4j");
+
         new SpringApplicationBuilder(DubboProviderOneApplication.class)
                 .web(WebApplicationType.NONE)
                 .run(args);
