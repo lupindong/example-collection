@@ -46,7 +46,7 @@ logging:
   #level: OFF、FATAL、ERROR、WARN、INFO、DEBUG、ALL
   level:
     root: INFO
-    com.alibaba.dubbo: INFO
+    org.apache.dubbo: INFO
     net.lovexq.example: INFO
     org.apache.zookeeper: WARN
     org.springframework: WARN

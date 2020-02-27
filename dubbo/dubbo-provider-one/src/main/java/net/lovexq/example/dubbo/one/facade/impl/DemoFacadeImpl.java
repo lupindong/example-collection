@@ -1,10 +1,10 @@
 package net.lovexq.example.dubbo.one.facade.impl;
 
-import com.alibaba.dubbo.config.annotation.Reference;
-import com.alibaba.dubbo.config.annotation.Service;
 import lombok.extern.slf4j.Slf4j;
 import net.lovexq.example.dubbo.one.facade.DemoFacade;
 import net.lovexq.example.dubbo.two.facade.ShopFacade;
+import org.apache.dubbo.config.annotation.Reference;
+import org.apache.dubbo.config.annotation.Service;
 
 /**
  * 演示 Facade实现类

@@ -21,8 +21,11 @@ dubbo:
     id: dubbo-consumer-one-registry
     address: zookeeper://127.0.0.1:2181
   consumer:
-      check: false
-      filter: rpcLogFilter2
+    check: false
+    filter: rpcLogFilter2
+    timeout:
+  provider:
+    timeout:
   service:
     provider-one:
       group: dev
@@ -39,7 +42,7 @@ logging:
   #level: OFF、FATAL、ERROR、WARN、INFO、DEBUG、ALL
   level:
     root: INFO
-    com.alibaba.dubbo: INFO
+    org.apache.dubbo: INFO
     net.lovexq.example: INFO
     org.apache.zookeeper: WARN
     org.springframework: WARN

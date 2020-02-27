@@ -7,7 +7,7 @@
     <parent>
         <groupId>net.lovexq.example</groupId>
         <artifactId>dubbo</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.1.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>dubbo-provider-two</artifactId>
@@ -29,7 +29,7 @@
         <dependency>
             <groupId>net.lovexq.example</groupId>
             <artifactId>dubbo-provider-two-api</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>1.1.0-SNAPSHOT</version>
         </dependency>
 
         <!-- **Spring依赖** -->
@@ -46,12 +46,12 @@
         <!-- **第三方依赖** -->
         <!-- Dubbo Spring Boot Starter -->
         <dependency>
-            <groupId>com.alibaba.boot</groupId>
+            <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.alibaba</groupId>
+            <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo</artifactId>
         </dependency>
 

@@ -1,11 +1,10 @@
 package net.lovexq.example.dubbo.two.facade.impl;
 
-import com.alibaba.dubbo.config.annotation.Service;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import net.lovexq.example.dubbo.two.facade.ShopFacade;
+import org.apache.dubbo.config.annotation.Service;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Random;
 

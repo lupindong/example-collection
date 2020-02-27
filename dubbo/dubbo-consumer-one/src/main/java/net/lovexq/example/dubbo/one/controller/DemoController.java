@@ -1,8 +1,8 @@
 package net.lovexq.example.dubbo.one.controller;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import net.lovexq.example.dubbo.one.facade.DemoFacade;
 import net.lovexq.example.dubbo.two.facade.ShopFacade;
+import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
