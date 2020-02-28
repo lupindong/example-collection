@@ -13,11 +13,11 @@
             <charset>UTF-8</charset> <!-- 此处设置字符集 -->
         </encoder>
         <file>
-            ${LOG_PATH}/application.log
+            ${LOG_PATH}/${LOG_FILE}.log
         </file>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <!-- rollover daily -->
-            <fileNamePattern>${LOG_PATH}/application-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>${LOG_PATH}/${LOG_FILE}-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <!-- each file should be at most 100MB, keep 60 days worth of history, but at most 20GB -->
             <maxFileSize>32MB</maxFileSize>
             <maxHistory>90</maxHistory>
@@ -32,11 +32,11 @@
             <charset>UTF-8</charset> <!-- 此处设置字符集 -->
         </encoder>
         <file>
-            ${LOG_PATH}/error/application-error.log
+            ${LOG_PATH}/error/${LOG_FILE}-error.log
         </file>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <!-- rollover daily -->
-            <fileNamePattern>${LOG_PATH}/error/application-error-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>${LOG_PATH}/error/${LOG_FILE}-error-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <!-- each file should be at most 100MB, keep 60 days worth of history, but at most 20GB -->
             <maxFileSize>32MB</maxFileSize>
             <maxHistory>90</maxHistory>
@@ -58,16 +58,22 @@
         </encoder>
     </appender>
 
-    <!-- root将级别为“INFO”及大于“INFO”的日志信息交给已经配置好的名为“STDOUT”的appender处理，“STDOUT”appender将信息打印到Console； -->
-    <!-- Enable FILE and STDOUT appenders for all log messages. By default, only log at level INFO and above. -->
-    <root level="${logging.level.root}">
-        <appender-ref ref="STDOUT"/>
-    </root>
+    <appender name ="ASYNC-FILE" class= "ch.qos.logback.classic.AsyncAppender">
+        <discardingThreshold>0</discardingThreshold>
+        <queueSize>256</queueSize>
+        <appender-ref ref ="FILE"/>
+    </appender>
 
-    <logger name="logger_name" level="${logging.level.root}" additivity="false">
+    <appender name ="ASYNC-FILE-ERROR" class= "ch.qos.logback.classic.AsyncAppender">
+        <discardingThreshold>0</discardingThreshold>
+        <queueSize>256</queueSize>
+        <appender-ref ref ="FILE-ERROR"/>
+    </appender>
+
+    <root level="${logging.level.root}" additivity="false">
         <appender-ref ref="STDOUT"/>
-        <appender-ref ref="FILE"/>
-        <appender-ref ref="FILE-ERROR"/>
-    </logger>
+        <appender-ref ref="ASYNC-FILE"/>
+        <appender-ref ref="ASYNC-FILE-ERROR"/>
+    </root>
 
 </configuration>

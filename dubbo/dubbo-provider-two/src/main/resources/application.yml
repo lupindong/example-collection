@@ -2,12 +2,8 @@
 spring:
   application:
     name: dubbo-provider-two
-
-server:
-  port: 9090
-
-management:
-  port: 9091
+  profiles:
+    active: dev
 
 # Dubbo Config properties
 dubbo:
@@ -15,7 +11,7 @@ dubbo:
   protocol:
     id: dubbo
     name: dubbo
-    port: 21001
+    port: 21002
     status: server
   ## RegistryConfig Bean
   registry:
@@ -28,16 +24,17 @@ dubbo:
     basePackages: net.lovexq.example.dubbo.two.facade.impl
   # ProviderConfig Bean
   provider:
-    group: dev
+    group: ${spring.profiles.active}
     version: 1.0.0
-    timeout: 300000
+    timeout: 30000
     retries: 0
-    delay: 100
+    delay: -1
     filter:
 
 logging:
-  path: /home/net/lovexq/dubbo-provider-two/log/${spring.application.name}-${server.port}
-  file: ${logging.path}/application.log
+  file:
+    name: ${spring.application.name}
+    path: /home/lovexq/${spring.application.name}/logs
   #level: OFF、FATAL、ERROR、WARN、INFO、DEBUG、ALL
   level:
     root: INFO

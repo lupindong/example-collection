@@ -28,17 +28,18 @@ dubbo:
     timeout:
   service:
     provider-one:
-      group: dev
+      group: ${spring.profiles.active}
       version: 1.0.0
       #url: dubbo://127.0.0.1:21000
     provider-two:
-      group: dev
+      group: ${spring.profiles.active}
       version: 1.0.0
       #url: dubbo://127.0.0.1:21001
 
 logging:
-  path: /home/net/lovexq/dubbo-provider-two/log/${spring.application.name}-${server.port}
-  file: ${logging.path}/application.log
+  file:
+    name: ${spring.application.name}
+    path: /home/lovexq/${spring.application.name}/logs
   #level: OFF、FATAL、ERROR、WARN、INFO、DEBUG、ALL
   level:
     root: INFO
