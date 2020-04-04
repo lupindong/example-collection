@@ -22,8 +22,7 @@ public class InParkingDataEventMain {
             Disruptor<InParkingDataEvent> disruptor = new Disruptor<>(InParkingDataEvent::new, bufferSize, DaemonThreadFactory.INSTANCE);
 
             // 使用disruptor创建消费者组 ParkingData2DbHandler 和 ParkingDataToKafkaHandler
-            EventHandlerGroup<InParkingDataEvent> handlerGroup = disruptor.handleEventsWith(
-                    new InParkingData2DBHandler(), new InParkingData2KafkaHandler());
+            EventHandlerGroup<InParkingDataEvent> handlerGroup = disruptor.handleEventsWith(new InParkingData2DBHandler(), new InParkingData2KafkaHandler());
 
             // 当上面两个消费者处理结束后在消耗 smsHandler
             InParkingData2SMSHandler inParkingDataSmsHandler = new InParkingData2SMSHandler();
