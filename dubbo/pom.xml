@@ -20,7 +20,7 @@
         <encoding>UTF-8</encoding>
 
         <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
-        <dubbo.version>2.7.5</dubbo.version>
+        <dubbo.version>2.7.15</dubbo.version>
         <dubbo-starter.version>2.7.5</dubbo-starter.version>
         <lombok.version>1.18.0</lombok.version>
     </properties>
